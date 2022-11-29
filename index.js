@@ -5,10 +5,21 @@ var msg = document.getElementById("msg");
 
 var count = document.getElementById("counter").innerText;
 
+function btn3_hide() {
+  if (count < 1) {
+    btn3.style.visibility = "hidden";
+  } else {
+    btn3.style.visibility = "visible";
+  }
+}
+
+btn3_hide();
+
 function increment() {
   count++;
   document.getElementById("counter").innerText = count;
   msg.innerText = "";
+  btn3_hide();
 }
 
 function decrement() {
@@ -18,11 +29,13 @@ function decrement() {
     count--;
     document.getElementById("counter").innerText = count;
   }
+  btn3_hide();
 }
 
 function clear() {
   count = 0;
   document.getElementById("counter").innerText = count;
+  btn3_hide();
 }
 
 btn1.onclick = decrement;
